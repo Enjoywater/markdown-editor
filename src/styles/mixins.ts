@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const fitImg = css`
   img {
@@ -6,4 +6,17 @@ export const fitImg = css`
     height: 100%;
     object-fit: cover;
   }
-`
+`;
+
+export const commonWrapper = css`
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  padding: 20px;
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+`;
