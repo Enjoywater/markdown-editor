@@ -3,13 +3,21 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+  "ignorePatterns": ["node_modules/"],
+
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
   },
-  "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
@@ -29,6 +37,10 @@
         "reservedFirst": ["key"]
       }
     ],
+    "space-before-function-paren": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": "off",
     "@typescript-eslint/default-param-last": ["off"],
     "@typescript-eslint/indent": ["off"],
     "@typescript-eslint/no-use-before-define": ["off"],
@@ -68,5 +80,12 @@
     "object-curly-newline": ["off"],
     "radix": ["error", "as-needed"],
     "space-before-blocks": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
