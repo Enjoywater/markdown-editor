@@ -1,7 +1,7 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
-export const font = (size: number, weight: number, height = 0) => css`
+export const font = (size: number, weight: number) => css`
   font-size: ${size}px;
   font-weight: ${weight};
-  line-height: ${height}px;
-`
+  line-height: ${size * 1.5}px;
+`;
