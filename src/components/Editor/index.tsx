@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 import styled from 'styled-components';
 
@@ -8,7 +8,7 @@ import { flex } from 'styles/flex';
 import { font } from 'styles/font';
 import { commonWrapper } from 'styles/mixins';
 
-function Editor() {
+function Editor({ onTextChange }: { onTextChange: (e: ChangeEvent<HTMLTextAreaElement>) => void }) {
   return (
     <Wrapper>
       <ToolBox>
@@ -34,7 +34,7 @@ function Editor() {
           <img src="/icons/linethrough.png" />
         </Tool>
       </ToolBox>
-      <TextareaAutosize autoFocus placeholder="Write here.." />
+      <TextareaAutosize autoFocus placeholder="Write here.." onChange={(e) => onTextChange(e)} />
     </Wrapper>
   );
 }
@@ -65,6 +65,7 @@ const ToolBox = styled.div`
   ${flex('', 'center')};
   position: sticky;
   top: 0;
+  width: 100%;
   height: 36px;
   margin-bottom: 10px;
   background-color: white;
