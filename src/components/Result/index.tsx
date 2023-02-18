@@ -13,4 +13,6 @@ const Wrapper = styled.div`
   ${commonWrapper};
   right: 0;
   left: 50%;
+  padding-top: 55px;
+  background-color: #fafafa;
 `;
