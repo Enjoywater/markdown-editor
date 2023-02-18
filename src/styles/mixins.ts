@@ -13,6 +13,7 @@ export const commonWrapper = css`
   top: 60px;
   bottom: 0;
   padding: 20px;
+  padding-top: 0;
   overflow: auto;
 
   ::-webkit-scrollbar {
