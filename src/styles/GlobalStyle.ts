@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    html, body, div, span, applet, object, iframe,
+    /* html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
     del, dfn, em, img, ins, kbd, q, s, samp,
@@ -15,6 +15,16 @@ const GlobalStyle = createGlobalStyle`
     main, menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
 	    margin: 0;
+	    padding: 0;
+	    border: 0;
+        box-sizing: border-box;
+	    font-size: 100%;
+	    font: inherit;
+	    vertical-align: baseline;
+    } */
+
+    html, body, div, textarea {
+        margin: 0;
 	    padding: 0;
 	    border: 0;
         box-sizing: border-box;
