@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import Editor from 'components/Editor';
@@ -8,14 +8,21 @@ import { flex } from 'styles/flex';
 import { font } from 'styles/font';
 
 function App() {
+  const [inputText, setInputText] = useState<string>('');
+
+  const handleInputText = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target;
+    setInputText(value);
+  };
+
   return (
     <Container>
       <Header>
         <p>Simple Markdown Editor</p>
       </Header>
       <Wrapper>
-        <Editor />
-        <Result />
+        <Editor onTextChange={handleInputText} />
+        <Result text={inputText} />
       </Wrapper>
     </Container>
   );
